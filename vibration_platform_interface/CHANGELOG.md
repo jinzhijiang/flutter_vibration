@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Bump package `device_info_plus` to ">=9.0.2 <14.0.0"
+
 ## 0.1.1
 
 - Bump package `device_info_plus` to ">=9.0.2 <13.0.0"
