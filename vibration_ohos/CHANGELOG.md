@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Pin `device_info_plus` to openharmony-sig git fork (`br_device_info_plus-v11.1.0_ohos`)
+
 ## 0.0.5
 
 * Replace `device_info_plus_ohos` with `device_info_plus` to avoid duplicate OHOS native plugin registration
