@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Replace `device_info_plus_ohos` with `device_info_plus` to avoid duplicate OHOS native plugin registration
+
 ## 0.0.4
 
 * Bump package `device_info_plus_ohos` to ">=0.0.7 <1.0.0"

@@ -2,7 +2,7 @@ library vibration_ohos;
 
 import 'dart:convert';
 
-import 'package:device_info_plus_ohos/device_info_plus_ohos.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:vibration_platform_interface/vibration_platform_interface.dart';
 export 'package:vibration_platform_interface/vibration_platform_interface.dart';
@@ -13,7 +13,7 @@ class VibrationOhos extends VibrationPlatform {
     VibrationPlatform.instance = VibrationOhos();
   }
 
-  final DeviceInfoOhosPlugin ohosDeviceInfo = DeviceInfoOhosPlugin();
+  final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
 
   /// Method channel to communicate with native code.
   final MethodChannel _channel = const MethodChannel('vibration');
@@ -28,7 +28,7 @@ class VibrationOhos extends VibrationPlatform {
   @override
   Future<bool> hasVibrator() async {
     try {
-      final deviceData = await ohosDeviceInfo.ohosDeviceInfo;
+      final deviceData = await _deviceInfo.ohosDeviceInfo;
 
       if (!deviceData.isPhysicalDevice) {
         return false;
@@ -52,7 +52,7 @@ class VibrationOhos extends VibrationPlatform {
   @override
   Future<bool> hasAmplitudeControl() async {
     try {
-      final deviceData = await ohosDeviceInfo.ohosDeviceInfo;
+      final deviceData = await _deviceInfo.ohosDeviceInfo;
       if (!deviceData.isPhysicalDevice) {
         return false;
       }
